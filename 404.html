@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found, Miguel Angel Quiroz</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#E3E7EA">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') d.setAttribute('data-theme', saved);
+      } catch (e) {}
+      var theme = d.getAttribute('data-theme');
+      var dark = theme ? theme === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', dark ? '#1C2126' : '#E3E7EA');
+    })();
+  </script>
+  <script src="/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <svg viewBox="0 0 26 18" fill="currentColor" aria-hidden="true"><path d="M0 0h2v18H0zM3 0h1v18H3zM5 0h3v18H5zM9 0h1v18H9zM12 0h2v18h-2zM15 0h1v18h-1zM18 0h3v18h-3zM22 0h1v18h-1zM24 0h2v18h-2z"/></svg>
+        Miguel Angel Quiroz
+      </a>
+      <div class="menu">
+        <button class="icon-btn theme-btn" type="button" aria-label="Switch to dark mode">
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a6.8 6.8 0 0 0 10.7 10.7z"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="nf">
+    <div class="wrap">
+      <div class="nf-label">
+        <p class="nf-status"><span class="led" aria-hidden="true"></span>No record found</p>
+        <h1>Page not found</h1>
+        <p>The page you’re looking for doesn’t exist or has moved.</p>
+        <a class="btn" href="/">Go to the home page</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

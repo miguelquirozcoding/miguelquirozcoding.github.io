@@ -1,43 +1,337 @@
 <!DOCTYPE html>
-<html lang="en"
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Miguel Angel Quiroz - Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-*, *::before, *:after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Miguel Angel Quiroz, software engineering student at UC Irvine</title>
+  <meta name="description" content="I’m a junior at UC Irvine looking for a Summer 2027 software engineering internship. My experience, skills, education and contact details.">
+  <link rel="canonical" href="https://miguelquirozcoding.github.io/">
+  <meta name="theme-color" content="#E3E7EA">
+  <meta name="color-scheme" content="light dark">
 
-:root {
-    --bg: #f8f7f4;
-    --bg-card: #ffffff;
-    --text: #1a1a18;
-    --text-muted: #6b6b66;
-    --accent: #1a3a2a;
-    --accent-light: #e8f0eb;
-    --accent-mid: #3a6b50;
-    --border: #e2e0d8;
-    --hack-bg: #000000;
-    --hack-green: #00ff41;
-    --hack-green-dim: #00cc33;
-    --hack-green-dark: #0d2a0d;
-    --hack-border: #1a4a1a;
-    --hack-surface: #050f05;
-    --hack-muted: #2a6a2a;
-}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Miguel Angel Quiroz">
+  <meta property="og:url" content="https://miguelquirozcoding.github.io/">
+  <meta property="og:title" content="Miguel Angel Quiroz">
+  <meta property="og:description" content="I’m a junior at UC Irvine looking for a Summer 2027 software engineering internship.">
+  <meta property="og:image" content="https://miguelquirozcoding.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Miguel Angel Quiroz, a junior at UC Irvine looking for a Summer 2027 software engineering internship, next to an asset label with his school, degrees and a barcode.">
+  <meta name="twitter:card" content="summary_large_image">
 
-html { scroll-behavior: smooth; }
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/barlow-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/barlow-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
 
-body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    font-size: 16px;
-    line-height: 1.7;
-    overflow-x: hidden;
-}
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') d.setAttribute('data-theme', saved);
+      } catch (e) {}
+      var theme = d.getAttribute('data-theme');
+      var dark = theme ? theme === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', dark ? '#1C2126' : '#E3E7EA');
+    })();
+  </script>
+  <script src="projects.js" defer></script>
+  <script src="main.js" defer></script>
 
-</style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Miguel Angel Quiroz",
+      "url": "https://miguelquirozcoding.github.io/",
+      "email": "mailto:miguelqu0507@gmail.com",
+      "affiliation": { "@type": "CollegeOrUniversity", "name": "University of California, Irvine" },
+      "knowsLanguage": ["English", "Spanish"],
+      "sameAs": ["https://github.com/miguelquirozcoding", "https://www.linkedin.com/in/miguel-angel-quiroz07"]
+    }
+  </script>
 </head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="#top">
+        <svg viewBox="0 0 26 18" fill="currentColor" aria-hidden="true"><path d="M0 0h2v18H0zM3 0h1v18H3zM5 0h3v18H5zM9 0h1v18H9zM12 0h2v18h-2zM15 0h1v18h-1zM18 0h3v18h-3zM22 0h1v18h-1zM24 0h2v18h-2z"/></svg>
+        Miguel Angel Quiroz
+      </a>
+      <div class="menu">
+        <nav class="nav" id="site-nav" aria-label="Sections">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li data-projects-link hidden><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <button class="icon-btn theme-btn" type="button" aria-label="Switch to dark mode">
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a6.8 6.8 0 0 0 10.7 10.7z"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="name">
+      <div class="wrap">
+        <div class="intro">
+          <h1 id="name" class="name"><span class="ln"><span>Miguel Angel</span></span> <span class="ln"><span>Quiroz</span></span></h1>
+          <p class="lede">I’m a junior at UC&nbsp;Irvine looking for a Summer&nbsp;2027 software engineering internship.</p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:miguelqu0507@gmail.com">Email me</a>
+            <a class="btn ghost" href="https://github.com/miguelquirozcoding">GitHub</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/miguel-angel-quiroz07">LinkedIn</a>
+          </div>
+        </div>
+
+        <!-- The 3D asset label. Decorative, so screen readers skip it; the same facts are in the sections below. -->
+        <div class="scene" aria-hidden="true">
+          <div class="glow"></div>
+          <div class="mat"></div>
+          <div class="shadow"></div>
+          <div class="cap cap-m">M</div>
+          <div class="float">
+            <div class="tilt">
+              <div class="drop">
+                <div class="slab"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="label">
+                  <div class="label-top print" style="--i:0">
+                    <p class="label-name">Miguel Angel Quiroz</p>
+                    <span class="holo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>
+                  </div>
+                  <dl>
+                    <dt class="print" style="--i:1">School</dt>
+                    <dd class="print" style="--i:1">UC&nbsp;Irvine, class of&nbsp;2028</dd>
+                    <dt class="print" style="--i:2">Degrees</dt>
+                    <dd class="print" style="--i:2">Software Engineering<br>Business Information Management</dd>
+                    <dt class="print" style="--i:3">Languages</dt>
+                    <dd class="print" style="--i:3">English and Spanish</dd>
+                  </dl>
+                  <!-- A real Code 128 barcode that encodes github.com/miguelquirozcoding -->
+                  <a class="code print" style="--i:4" href="https://github.com/miguelquirozcoding" tabindex="-1">
+                    <svg viewBox="0 0 354 40" preserveAspectRatio="none" fill="#000000"><path d="M0 0h2v40h-2zM3 0h1v40h-1zM6 0h1v40h-1zM11 0h1v40h-1zM14 0h2v40h-2zM17 0h1v40h-1zM22 0h1v40h-1zM27 0h2v40h-2zM30 0h1v40h-1zM33 0h1v40h-1zM36 0h4v40h-4zM41 0h1v40h-1zM44 0h1v40h-1zM47 0h2v40h-2zM53 0h1v40h-1zM55 0h1v40h-1zM58 0h4v40h-4zM64 0h1v40h-1zM66 0h1v40h-1zM69 0h1v40h-1zM74 0h2v40h-2zM77 0h1v40h-1zM80 0h2v40h-2zM84 0h3v40h-3zM88 0h1v40h-1zM93 0h1v40h-1zM95 0h2v40h-2zM99 0h1v40h-1zM103 0h4v40h-4zM108 0h1v40h-1zM110 0h4v40h-4zM115 0h3v40h-3zM119 0h1v40h-1zM121 0h1v40h-1zM123 0h3v40h-3zM128 0h2v40h-2zM132 0h4v40h-4zM137 0h3v40h-3zM141 0h1v40h-1zM143 0h1v40h-1zM148 0h2v40h-2zM151 0h1v40h-1zM154 0h1v40h-1zM157 0h2v40h-2zM160 0h1v40h-1zM165 0h1v40h-1zM168 0h4v40h-4zM174 0h1v40h-1zM176 0h1v40h-1zM178 0h2v40h-2zM182 0h1v40h-1zM187 0h2v40h-2zM191 0h1v40h-1zM193 0h1v40h-1zM198 0h1v40h-1zM201 0h1v40h-1zM203 0h4v40h-4zM209 0h1v40h-1zM212 0h4v40h-4zM218 0h1v40h-1zM220 0h1v40h-1zM225 0h2v40h-2zM228 0h1v40h-1zM231 0h1v40h-1zM234 0h1v40h-1zM237 0h4v40h-4zM242 0h1v40h-1zM246 0h4v40h-4zM251 0h1v40h-1zM253 0h2v40h-2zM256 0h4v40h-4zM261 0h2v40h-2zM264 0h1v40h-1zM269 0h1v40h-1zM271 0h2v40h-2zM275 0h1v40h-1zM279 0h4v40h-4zM284 0h1v40h-1zM286 0h1v40h-1zM291 0h1v40h-1zM294 0h2v40h-2zM297 0h1v40h-1zM302 0h2v40h-2zM305 0h1v40h-1zM308 0h2v40h-2zM314 0h1v40h-1zM316 0h1v40h-1zM319 0h1v40h-1zM322 0h2v40h-2zM325 0h1v40h-1zM330 0h1v40h-1zM332 0h4v40h-4zM337 0h1v40h-1zM341 0h2v40h-2zM346 0h3v40h-3zM350 0h1v40h-1zM352 0h2v40h-2z"/></svg>
+                    <span class="laser"></span>
+                    <span class="url">github.com/miguelquirozcoding</span>
+                  </a>
+                  <span class="sheen"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cap cap-q">Q</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="sec" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="shw"><h2 id="about-title" class="sh">About</h2><span class="shl" aria-hidden="true"></span></div>
+        <p class="about-p"><span class="read">I’m earning two separate bachelor’s degrees at UC&nbsp;Irvine, one in Software Engineering and one in Business Information Management, and I’m in the class of&nbsp;2028.</span> <span class="read">I work as a freelance AI trainer at DataAnnotation, and in the summer of&nbsp;2026 I was an IT service technician intern at Mission Bank in Bakersfield.</span> <span class="read">I speak English and Spanish.</span></p>
+      </div>
+    </section>
+
+    <section id="experience" class="sec" aria-labelledby="experience-title">
+      <div class="wrap">
+        <div class="shw"><h2 id="experience-title" class="sh">Experience</h2><span class="shl" aria-hidden="true"></span></div>
+        <div class="rack">
+          <div class="uw">
+            <article class="unit">
+              <div class="ear" aria-hidden="true"><i></i><i></i></div>
+              <div class="face">
+                <div class="unit-top">
+                  <h3>AI Trainer</h3>
+                  <div class="unit-meta">
+                    <p class="status"><span class="led on" aria-hidden="true"></span>Current role</p>
+                    <p class="dates"><time datetime="2026-09">Sep&nbsp;2026</time> to present</p>
+                  </div>
+                </div>
+                <p class="org">DataAnnotation, freelance</p>
+                <ul class="bullets">
+                  <li>I create and evaluate software engineering tasks used to test and improve AI coding models.</li>
+                  <li>I review AI model outputs for correctness, code quality and instruction following.</li>
+                  <li>I write evaluations and grading guidelines.</li>
+                </ul>
+              </div>
+              <div class="vents" aria-hidden="true"></div>
+              <div class="ear" aria-hidden="true"><i></i><i></i></div>
+            </article>
+          </div>
+          <div class="uw">
+            <article class="unit">
+              <div class="ear" aria-hidden="true"><i></i><i></i></div>
+              <div class="face">
+                <div class="unit-top">
+                  <h3>IT Service Technician Intern</h3>
+                  <div class="unit-meta">
+                    <p class="status"><span class="led" aria-hidden="true"></span>Summer internship</p>
+                    <p class="dates"><time datetime="2026-06">Jun&nbsp;2026</time> to <time datetime="2026-09">Sep&nbsp;2026</time></p>
+                  </div>
+                </div>
+                <p class="org">Mission Bank, Bakersfield, CA</p>
+                <ul class="bullets">
+                  <li>I built an automation in Power Automate Desktop and PowerShell that reconciles the IT asset inventory with Active Directory and BitLocker records.</li>
+                  <li>I installed and configured software on 38&nbsp;new computers.</li>
+                  <li>I installed hardware at a new branch and at the admin office.</li>
+                  <li>I gave on site and remote IT support through Kaseya and monitored computers in BrightGauge.</li>
+                  <li>I managed Active Directory accounts and ran IT walkthroughs for new users.</li>
+                </ul>
+              </div>
+              <div class="vents" aria-hidden="true"></div>
+              <div class="ear" aria-hidden="true"><i></i><i></i></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects stay hidden until projects.js has at least one project with published: true -->
+    <section id="projects" class="sec" aria-labelledby="projects-title" hidden>
+      <div class="wrap">
+        <div class="shw"><h2 id="projects-title" class="sh">Projects</h2><span class="shl" aria-hidden="true"></span></div>
+        <div class="projects" data-projects></div>
+      </div>
+    </section>
+
+    <section id="skills" class="sec" aria-labelledby="skills-title">
+      <div class="wrap">
+        <div class="shw"><h2 id="skills-title" class="sh">Skills</h2><span class="shl" aria-hidden="true"></span></div>
+        <div class="kbw">
+          <div class="board">
+            <dl class="kb">
+              <div class="row">
+                <dt style="--i:0"><span class="key mod">Programming languages</span></dt>
+                <dd>
+                  <ul>
+                    <li style="--i:1"><span class="key">Python</span></li>
+                    <li style="--i:2"><span class="key">Swift</span></li>
+                    <li style="--i:3"><span class="key">SwiftUI</span></li>
+                    <li style="--i:4"><span class="key w2">JavaScript</span></li>
+                    <li style="--i:5"><span class="key">HTML</span></li>
+                    <li style="--i:6"><span class="key">CSS</span></li>
+                    <li style="--i:7"><span class="key">R</span></li>
+                    <li style="--i:8"><span class="key w2">PowerShell</span></li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="row">
+                <dt style="--i:9"><span class="key mod">Tools and platforms</span></dt>
+                <dd>
+                  <ul>
+                    <li style="--i:10"><span class="key">Git</span></li>
+                    <li style="--i:11"><span class="key">Docker</span></li>
+                    <li style="--i:12"><span class="key">Firebase</span></li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="row">
+                <dt style="--i:13"><span class="key mod">IT and automation</span></dt>
+                <dd>
+                  <ul>
+                    <li style="--i:14"><span class="key w3">Power Automate</span></li>
+                    <li style="--i:15"><span class="key w3">Active Directory</span></li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="row">
+                <dt style="--i:16"><span class="key mod">Spoken languages</span></dt>
+                <dd>
+                  <ul>
+                    <li style="--i:17"><span class="key w2">English</span></li>
+                    <li style="--i:18"><span class="key w2">Spanish</span></li>
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="sec" aria-labelledby="education-title">
+      <div class="wrap">
+        <div class="shw"><h2 id="education-title" class="sh">Education and&nbsp;honors</h2><span class="shl" aria-hidden="true"></span></div>
+        <div class="edu">
+          <div class="edu-cards">
+            <div class="cards">
+              <div class="cw">
+                <article class="card one">
+                  <div class="card-top"><p class="k">University of California, Irvine</p><span class="chip" aria-hidden="true"></span></div>
+                  <div><p class="k">Bachelor’s degree</p><h3 class="deg">Software Engineering</h3></div>
+                  <p class="k">Class of&nbsp;2028</p>
+                  <span class="foil" aria-hidden="true"></span>
+                </article>
+              </div>
+              <div class="cw">
+                <article class="card two">
+                  <div class="card-top"><p class="k">University of California, Irvine</p><span class="chip" aria-hidden="true"></span></div>
+                  <div><p class="k">Bachelor’s degree</p><h3 class="deg">Business Information Management</h3></div>
+                  <p class="k">Class of&nbsp;2028</p>
+                  <span class="foil" aria-hidden="true"></span>
+                </article>
+              </div>
+            </div>
+            <p class="note">Two separate degrees, not a double major.</p>
+          </div>
+          <div class="honors">
+            <article class="honor">
+              <h3>Valedictorian</h3>
+              <p>Ridgeview High School</p>
+            </article>
+            <article class="honor">
+              <h3>Volunteer, American Cancer Society Discovery Shop</h3>
+              <p><time datetime="2023-03">Mar&nbsp;2023</time> to <time datetime="2024-09">Sep&nbsp;2024</time>, 416&nbsp;hours</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="sec" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="shw"><h2 id="contact-title" class="sh">Contact</h2><span class="shl" aria-hidden="true"></span></div>
+        <div class="contact">
+          <div class="contact-copy">
+            <p>If you’re hiring software engineering interns for Summer&nbsp;2027, email&nbsp;me.</p>
+            <div class="contact-actions">
+              <a class="btn primary" href="mailto:miguelqu0507@gmail.com">Email me</a>
+              <button class="btn ghost" type="button" data-copy-email><span data-label aria-live="polite">Copy email</span></button>
+            </div>
+          </div>
+          <div class="pw">
+            <div class="printout">
+              <p class="po-name">Miguel Angel Quiroz</p>
+              <ul class="po-list">
+                <li><a class="po-email" href="mailto:miguelqu0507@gmail.com">miguelqu0507@gmail.com</a></li>
+                <li><a href="https://github.com/miguelquirozcoding">github.com/miguelquirozcoding</a></li>
+                <li><a href="https://www.linkedin.com/in/miguel-angel-quiroz07"><span>linkedin.com/in/<wbr><span class="nobr">miguel-angel-quiroz07</span></span></a></li>
+              </ul>
+            </div>
+            <div class="printer" aria-hidden="true"><span class="p-grille"></span><span class="p-led"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>© <span data-year>2026</span> Miguel Angel Quiroz</p>
+      <p>Every 3D object on this page is plain CSS. <a href="https://github.com/miguelquirozcoding/miguelquirozcoding.github.io">View the source</a></p>
+    </div>
+  </footer>
+</body>
+</html>
